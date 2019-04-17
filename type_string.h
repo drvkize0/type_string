@@ -29,5 +29,5 @@ namespace detail
     }
 }
 
-#define NEBULA_LAMBDA_HOLDER( x ) [](){ return x; }
-#define make_type_string( x ) detail::make_type_string_impl( NEBULA_LAMBDA_HOLDER( x ) )
+#define LAMBDA_HOLDER( x ) [](){ return x; }
+#define make_type_string( x ) detail::make_type_string_impl( LAMBDA_HOLDER( x ) )
