@@ -5,9 +5,12 @@
 
 int main( int argc, char** argv )
 {
-    constexpr auto tag = make_type_string( "test-tag0" );
+    using tag1_t = const type_string<'t', 'a', 'g'>;
+    constexpr auto tag2 = make_type_string( "tag" );
 
-    printf( "tag = %s\n", decltype( tag )::value );
+    printf( "std::is_same = %s\n", std::is_same<tag1_t, decltype( tag2 )>::value ? "true" : "false" );
+    printf( "tag = %s\n", tag1_t::value );
+    printf( "tag = %s\n", decltype( tag2 )::value );
 
     return 0;
 }
