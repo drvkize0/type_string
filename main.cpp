@@ -12,5 +12,7 @@ int main( int argc, char** argv )
     printf( "tag = %s\n", tag1_t::value );
     printf( "tag = %s\n", decltype( tag2 )::value );
 
+    std::getchar();
+
     return 0;
 }

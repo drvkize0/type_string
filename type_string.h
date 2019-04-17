@@ -6,12 +6,12 @@
 template<typename T, T... Ts>
 struct integral_constant_array
 {
-    static constexpr T value[] = { Ts..., '\0' };
+    static constexpr T value[] = { Ts... };
     static constexpr size_t size() noexcept { return sizeof...( Ts ); }
 };
 
 template<char... Cs>
-using type_string = struct integral_constant_array<char, Cs...>;
+using type_string = struct integral_constant_array<char, Cs..., '\0'>;
 
 namespace detail
 {
